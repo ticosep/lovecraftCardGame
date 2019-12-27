@@ -14,14 +14,15 @@ public class teste : MonoBehaviour
     }
 
     private void initializeCards()
-    {
+    {   
         float x = 0;
         Vector3 defaultPos = new Vector3(0, 0, 0);
+
         for (int i = 0; i < cards.Length; i++)
         {
             GameObject prefabRef = Instantiate(cardPrefab, defaultPos, Quaternion.identity);
 
-            x += prefabRef.GetComponent<BoxCollider2D>().bounds.size.x * i;
+            x += prefabRef.GetComponent<Collider>().bounds.size.x * i;
             Vector3 pos = new Vector3(x, 0, 0);
             prefabRef.transform.position = pos;
 
